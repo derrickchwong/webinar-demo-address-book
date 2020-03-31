@@ -1,0 +1,15 @@
+apiVersion: build.pivotal.io/v1alpha1
+kind: Image
+metadata:
+  name: webinar-demo-address-book
+spec:
+  tag: derrickchwong/webinar-demo-address-book
+  serviceAccount: tutorial-service-account
+  cacheSize: "1.5Gi"
+  builder:
+    name: default
+    kind: ClusterBuilder
+  source:
+    git:
+      url: https://github.com/derrickchwong/webinar-demo-address-book.git
+      revision: master
